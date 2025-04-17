@@ -11,12 +11,13 @@ h2 {
   margin: 0 0 5px 0;
   font-size: 28px;
 }
-select {
+.city-select {
   display: block;
   margin: 0 auto;
   font-size: 18px;
   border-radius: 4px;
   padding: 10px;
+  max-width: 80%;
 }
 .container {
   max-width: 600px;
