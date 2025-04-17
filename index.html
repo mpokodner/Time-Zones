@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>World Clock</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
- <body>
+  <body>
     <div class="container">
-        <h1>World Clock</h1>
+      <h1>World Clock</h1>
 
-        <select>
-            <option value="">Select a city...</option>
-            <option value="London">London</option>
-            <option value="New York">New York</option>
-            <option value="Auckland">Auckland</option>
-        </select>
+      <select id="city-select">
+        <option value="">Select a city...</option>
+        <option value="LA">Los Angeles</option>
+        <option value="Paris">Paris</option>
+        <option value="Auckland">Auckland</option>
+      </select>
 
-        <div class="city">
-            <h2>Los Angeles</h2>
-            <div class="date"></div>
-            <div class="time"></div>
-            <div class="time"></div>
+      <div class="cities">
+        <div class="city" id="LA">
+          <h2>Los Angeles</h2>
+          <div class="date"></div>
+          <div class="time"></div>
         </div>
-        <div>
-            <h2>Sydney</h2>
-            <div class="date"></div>
-            <div class="time"></div>
-            <div class="time"></div>
+        <div class="city" id="Paris">
+          <h2>Paris</h2>
+          <div class="date"></div>
+          <div class="time"></div>
         </div>
-        <footer> 
-            This project was coded by Michelle Pokodner and is<a href="https://github.com/mpokodner/Time-Zones" target="_blank">open sourced on GitHub</a>
-        </footer>
-    <script src="index.js"></script>
-
+      </div>
+      <footer>
+        This project was coded by Michelle Pokodner and is
+        <a href="https://github.com/mpokodner/Time-Zones" target="_blank"
+          >open sourced on GitHub</a
+        >
+      </footer>
+      <script src="index.js" defer></script>
+    </div>
   </body>
- </html>
+</html>
