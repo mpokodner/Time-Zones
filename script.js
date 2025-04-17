@@ -1,18 +1,18 @@
 function updateTime() {
-  let laElement = document.querySelector("#LA");
+  let LA = document.querySelector("#LA");
 
-  if (laElement) {
-    let laDateElement = losAngeles.querySelector(".date");
-    let laTimeElement = losAngeles.querySelector(".time");
+  if (LA) {
+    let laDateElement = LA.querySelector(".date");
+    let laTimeElement = LA.querySelector(".time");
     let laTime = moment().tz("America/Los_Angeles");
 
     laDateElement.innerHTML = laTime.format("MMMM Do YYYY");
     laTimeElement.innerHTML = laTime.format("h:mm:ss A");
   }
-  let parisElement = document.querySelector("#Paris");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
+  let Paris = document.querySelector("#Paris");
+  if (Paris) {
+    let parisDateElement = Paris.querySelector(".date");
+    let parisTimeElement = Paris.querySelector(".time");
     let parisTime = moment().tz("Europe/Paris");
 
     parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
@@ -21,20 +21,19 @@ function updateTime() {
 }
 function updateCity(event) {
   let cityTimeZone = event.target.value;
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1].split("-")[0];
   let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
+  let citiesElement = document.querySelector(".cities");
 
-  citiesElement.innerHTML = `div class="city">
+  citiesElement.innerHTML = `<div class="city">
     <div>
     <h2>${cityName}<h2>
     <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
     <div class="time">${cityTime.format("h:mm:ss A")}</div>
     </div>
-    <div class="time">${cityTime.format("h:mm:ss A")}</div>
     </div>`;
 }
 updateTime();
 setInterval(updateTime, 1000);
-let citiesSelectElement = document.querySelector("#city-select");
+let citiesSelectElement = document.querySelector(".city-select");
 citiesSelectElement.addEventListener("change", updateCity);
